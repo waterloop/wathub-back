@@ -1,15 +1,15 @@
 package main
 
 import (
-    "encoding/json"
     "github.com/gorilla/mux"
     "log"
     "net/http"
+    "wathub-back/models"
+    "wathub-back/utils"
 )
 
 func baseFunc(w http.ResponseWriter, r *http.Request) {
-     w.Header().Set("Content-Type", "application/json")
-     json.NewEncoder(w).Encode(nil)
+     utils.JsonRespond(w, models.Term{})
 }
 
 func main() {
